@@ -3970,6 +3970,7 @@ __metadata:
     vite: "npm:^7.3.1"
     vite-plugin-vue-devtools: "npm:^8.0.5"
     vue: "npm:^3.5.26"
+    vue-eslint-parser: "npm:^10.2.0"
     vue-tsc: "npm:^3.2.2"
   languageName: unknown
   linkType: soft
