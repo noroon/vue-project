@@ -20,13 +20,13 @@ jobs:
           cache: yarn
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install
 
       - name: Run ESLint (Flat config)
         run: yarn lint
 
       - name: TypeScript typecheck (Vue)
-        run: yarn typecheck
+        run: yarn type-check
 
       - name: Build project
         run: yarn build
