@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import Navbar from '@/components/Navbar.vue'
-import Hero from '@/components/Hero.vue'
+import AppNavbar from '@/components/AppNavbar.vue'
+import AppHero from '@/components/AppHero.vue'
 </script>
 
 <template>
-  <Navbar />
-  <Hero />
+  <AppNavbar />
+  <AppHero />
 </template>
