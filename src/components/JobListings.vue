@@ -1,21 +1,8 @@
 <script setup lang="ts">
 import jobData from '@/jobs.json'
+import JobCard from './JobCard.vue'
 import { toRefs } from 'vue'
-
-type Job = {
-  id: string
-  title: string
-  type: string
-  description: string
-  location: string
-  salary: string
-  company: {
-    name: string
-    description: string
-    contactEmail: string
-    contactPhone: string
-  }
-}
+import type { Job } from '@/types/job'
 
 interface Props {
   jobs?: Job[]
@@ -33,9 +20,7 @@ const { jobs } = toRefs(props)
     <div class="container-xl lg:container m-auto">
       <h2 class="text-3xl font-bold text-green-500 mb-6 text-center">Browse Jobs</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div v-for="job in jobs" :key="job.id">
-          {{ job.title }}
-        </div>
+        <JobCard v-for="job in jobs" :key="job.id" :job="job" />
       </div>
     </div>
   </section>
