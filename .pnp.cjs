@@ -28,6 +28,7 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
+          ["@tailwindcss/line-clamp", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:0.4.4"],\
           ["@tailwindcss/vite", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:4.1.18"],\
           ["@tsconfig/node24", "npm:24.0.4"],\
           ["@types/node", "npm:24.10.9"],\
@@ -40,6 +41,7 @@ const RAW_RUNTIME_STATE =
           ["jiti", "npm:2.6.1"],\
           ["npm-run-all2", "npm:8.0.4"],\
           ["prettier", "npm:3.8.1"],\
+          ["primeicons", "npm:7.0.0"],\
           ["tailwindcss", "npm:4.1.18"],\
           ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"],\
           ["vite", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:7.3.1"],\
@@ -1329,6 +1331,28 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/unplugged/@rollup-rollup-win32-x64-msvc-npm-4.57.0-9b7524f676/node_modules/@rollup/rollup-win32-x64-msvc/",\
         "packageDependencies": [\
           ["@rollup/rollup-win32-x64-msvc", "npm:4.57.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@tailwindcss/line-clamp", [\
+      ["npm:0.4.4", {\
+        "packageLocation": "../../.yarn/berry/cache/@tailwindcss-line-clamp-npm-0.4.4-23cb911440-10c0.zip/node_modules/@tailwindcss/line-clamp/",\
+        "packageDependencies": [\
+          ["@tailwindcss/line-clamp", "npm:0.4.4"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:0.4.4", {\
+        "packageLocation": "./.yarn/__virtual__/@tailwindcss-line-clamp-virtual-938518ee18/3/.yarn/berry/cache/@tailwindcss-line-clamp-npm-0.4.4-23cb911440-10c0.zip/node_modules/@tailwindcss/line-clamp/",\
+        "packageDependencies": [\
+          ["@tailwindcss/line-clamp", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:0.4.4"],\
+          ["@types/tailwindcss", null],\
+          ["tailwindcss", "npm:4.1.18"]\
+        ],\
+        "packagePeers": [\
+          "@types/tailwindcss",\
+          "tailwindcss"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4074,6 +4098,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["primeicons", [\
+      ["npm:7.0.0", {\
+        "packageLocation": "../../.yarn/berry/cache/primeicons-npm-7.0.0-d3158bd933-10c0.zip/node_modules/primeicons/",\
+        "packageDependencies": [\
+          ["primeicons", "npm:7.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["proc-log", [\
       ["npm:6.1.0", {\
         "packageLocation": "../../.yarn/berry/cache/proc-log-npm-6.1.0-84e609b3f4-10c0.zip/node_modules/proc-log/",\
@@ -4881,6 +4914,7 @@ const RAW_RUNTIME_STATE =
       ["workspace:.", {\
         "packageLocation": "./",\
         "packageDependencies": [\
+          ["@tailwindcss/line-clamp", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:0.4.4"],\
           ["@tailwindcss/vite", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:4.1.18"],\
           ["@tsconfig/node24", "npm:24.0.4"],\
           ["@types/node", "npm:24.10.9"],\
@@ -4893,6 +4927,7 @@ const RAW_RUNTIME_STATE =
           ["jiti", "npm:2.6.1"],\
           ["npm-run-all2", "npm:8.0.4"],\
           ["prettier", "npm:3.8.1"],\
+          ["primeicons", "npm:7.0.0"],\
           ["tailwindcss", "npm:4.1.18"],\
           ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"],\
           ["vite", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:7.3.1"],\
@@ -11650,7 +11685,7 @@ function arg(
 		}
 
 		if (wholeArg.length > 1 && wholeArg[0] === '-') {
-			 
+			/* eslint-disable operator-linebreak */
 			const separatedArguments =
 				wholeArg[1] === '-' || wholeArg.length === 2
 					? [wholeArg]
@@ -11701,7 +11736,7 @@ function arg(
 							!(
 								argv[i + 1].match(/^-?\d*(\.(?=\d))?\d*$/) &&
 								(type === Number ||
-									 
+									// eslint-disable-next-line no-undef
 									(typeof BigInt !== 'undefined' && type === BigInt))
 							))
 					) {

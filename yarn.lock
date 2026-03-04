@@ -985,6 +985,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tailwindcss/line-clamp@npm:^0.4.4":
+  version: 0.4.4
+  resolution: "@tailwindcss/line-clamp@npm:0.4.4"
+  peerDependencies:
+    tailwindcss: ">=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1"
+  checksum: 10c0/53e74e75bff066469501b784ab70af444fa460d556a3adf95cb14ccf1a56b1e63c106f0c4bb94463ba0310f2ce1f71350f9b18a556048655cfd2a0ad308ccfb8
+  languageName: node
+  linkType: hard
+
 "@tailwindcss/node@npm:4.1.18":
   version: 4.1.18
   resolution: "@tailwindcss/node@npm:4.1.18"
@@ -3305,6 +3314,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"primeicons@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "primeicons@npm:7.0.0"
+  checksum: 10c0/a7f6344d6db49e785d2040b35f8cae761d15bb8f8ee70ade8981d45438245414e913fe7235921122aade2b0a11a032c98b44dc527be2da11aa791ff145099c06
+  languageName: node
+  linkType: hard
+
 "proc-log@npm:^6.0.0":
   version: 6.1.0
   resolution: "proc-log@npm:6.1.0"
@@ -3953,6 +3969,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "vue-project@workspace:."
   dependencies:
+    "@tailwindcss/line-clamp": "npm:^0.4.4"
     "@tailwindcss/vite": "npm:^4.1.18"
     "@tsconfig/node24": "npm:^24.0.4"
     "@types/node": "npm:^24.10.9"
@@ -3965,6 +3982,7 @@ __metadata:
     jiti: "npm:^2.6.1"
     npm-run-all2: "npm:^8.0.4"
     prettier: "npm:3.8.1"
+    primeicons: "npm:^7.0.0"
     tailwindcss: "npm:^4.1.18"
     typescript: "npm:~5.9.3"
     vite: "npm:^7.3.1"
