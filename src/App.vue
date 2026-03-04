@@ -9,5 +9,5 @@ import JobListings from './components/JobListings.vue'
   <AppNavbar />
   <AppHero />
   <HomeCards />
-  <JobListings />
+  <JobListings :limit="3" :showButton="true" />
 </template>
