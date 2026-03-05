@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { RouterLink } from 'vue-router'
 import type { Job } from '@/types/job'
 import { ref } from 'vue'
 
@@ -40,12 +41,12 @@ const showFullDescription = ref(false)
           {{ job.location }}
         </div>
 
-        <a
-          :href="'/job/' + job.id"
-          class="h-[36px] bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-center text-sm"
+        <RouterLink
+          :to="'/job/' + job.id"
+          class="h-9 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-center text-sm"
         >
           Read More
-        </a>
+        </RouterLink>
       </div>
     </div>
   </div>
