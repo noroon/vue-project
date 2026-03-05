@@ -42,7 +42,7 @@ const showFullDescription = ref(false)
         </div>
 
         <RouterLink
-          :to="'/job/' + job.id"
+          :to="'/jobs/' + job.id"
           class="h-9 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-center text-sm"
         >
           Read More
