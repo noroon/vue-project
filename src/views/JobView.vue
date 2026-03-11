@@ -1,18 +1,59 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router'
+import { reactive, onMounted } from 'vue'
+import { useRoute, RouterLink } from 'vue-router'
+import axios from 'axios'
+import { VueSpinner } from 'vue3-spinners'
+import type { Job } from '@/types/job'
+import BackButton from '@/components/BackButton.vue'
+
+const route = useRoute()
+const jobId = route.params.id
+
+interface State {
+  job: Job | null
+  loading: boolean
+  error: string | null
+}
+
+const state = reactive<State>({
+  job: null,
+  loading: true,
+  error: '',
+})
+
+onMounted(async () => {
+  try {
+    const { data } = await axios.get<Job>(`/api/jobs/${jobId}`)
+    state.job = data
+  } catch (err) {
+    state.error = 'Failed to load job'
+    console.error(err)
+  } finally {
+    state.loading = false
+  }
+})
 </script>
 
 <template>
-  <section class="bg-green-50">
+  <BackButton />
+
+  <div
+    v-if="state.loading"
+    class="flex justify-center items-center h-screen text-green-500 text-5xl py-6"
+  >
+    <VueSpinner class="-mt-30" />
+  </div>
+
+  <section v-else-if="state.job" class="bg-green-50">
     <div class="container m-auto py-10 px-6">
       <div class="grid grid-cols-1 md:grid-cols-[70%_30%] w-full gap-6">
         <main>
           <div class="bg-white p-6 rounded-lg shadow-md text-center md:text-left">
-            <div class="text-gray-500 mb-4">Full-Time</div>
-            <h1 class="text-3xl font-bold mb-4">Senior Vue Developer</h1>
+            <div class="text-gray-500 mb-4">{{ state.job.type }}</div>
+            <h1 class="text-3xl font-bold mb-4">{{ state.job.title }}</h1>
             <div class="text-gray-500 mb-4 flex align-middle justify-center md:justify-start">
               <i class="fa-solid fa-location-dot text-lg text-orange-700 mr-2"></i>
-              <p class="text-orange-700">Boston, MA</p>
+              <p class="text-orange-700">{{ state.job.location }}</p>
             </div>
           </div>
 
@@ -20,47 +61,40 @@ import { RouterLink } from 'vue-router'
             <h3 class="text-green-800 text-lg font-bold mb-6">Job Description</h3>
 
             <p class="mb-4">
-              We are seeking a talented Front-End Developer to join our team in Boston, MA. The
-              ideal candidate will have strong skills in HTML, CSS, and JavaScript, with experience
-              working with modern JavaScript frameworks such as Vue or Angular.
+              {{ state.job.description }}
             </p>
 
             <h3 class="text-green-800 text-lg font-bold mb-2">Salary</h3>
 
-            <p class="mb-4">$70k - $80K / Year</p>
+            <p class="mb-4">{{ state.job.salary }} / Year</p>
           </div>
         </main>
 
-        <!-- Sidebar -->
         <aside>
-          <!-- Company Info -->
           <div class="bg-white p-6 rounded-lg shadow-md">
             <h3 class="text-xl font-bold mb-6">Company Info</h3>
 
-            <h2 class="text-2xl">NewTek Solutions</h2>
+            <h2 class="text-2xl">{{ state.job.company.name }}</h2>
 
             <p class="my-2">
-              NewTek Solutions is a leading technology company specializing in web development and
-              digital solutions. We pride ourselves on delivering high-quality products and services
-              to our clients while fostering a collaborative and innovative work environment.
+              {{ state.job.company.description }}
             </p>
 
             <hr class="my-4" />
 
             <h3 class="text-xl">Contact Email:</h3>
 
-            <p class="my-2 bg-green-100 p-2 font-bold">contact@newteksolutions.com</p>
+            <p class="my-2 bg-green-100 p-2 font-bold">{{ state.job.company.contactEmail }}</p>
 
             <h3 class="text-xl">Contact Phone:</h3>
 
-            <p class="my-2 bg-green-100 p-2 font-bold">555-555-5555</p>
+            <p class="my-2 bg-green-100 p-2 font-bold">{{ state.job.company.contactPhone }}</p>
           </div>
 
-          <!-- Manage -->
           <div class="bg-white p-6 rounded-lg shadow-md mt-6">
             <h3 class="text-xl font-bold mb-6">Manage Job</h3>
             <RouterLink
-              to="/jobs/add"
+              :to="`/jobs/edit/${state.job?.id}`"
               class="bg-green-500 hover:bg-green-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
               >Edit Job</RouterLink
             >
@@ -74,4 +108,6 @@ import { RouterLink } from 'vue-router'
       </div>
     </div>
   </section>
+
+  <div v-else>{{ state.error }}</div>
 </template>

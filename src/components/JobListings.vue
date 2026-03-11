@@ -31,7 +31,7 @@ const visibleJobs = computed(() => (props.limit ? state.jobs.slice(0, props.limi
 
 onMounted(async () => {
   try {
-    const { data } = await axios.get<Job[]>('http://localhost:8000/jobs')
+    const { data } = await axios.get<Job[]>('/api/jobs')
     state.jobs = data
   } catch (err) {
     state.error = 'Failed to load jobs'
@@ -49,9 +49,10 @@ onMounted(async () => {
       <div v-if="state.loading" class="flex justify-center text-green-500 text-5xl py-6">
         <VueSpinner />
       </div>
-      <div v-else class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div v-else-if="state.jobs" class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <JobCard v-for="job in visibleJobs" :key="job.id" :job="job" />
       </div>
+      <div v-else>{{ state.error }}</div>
     </div>
   </section>
 
