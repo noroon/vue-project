@@ -41,7 +41,7 @@ onMounted(async () => {
     v-if="state.loading"
     class="flex justify-center items-center h-screen text-green-500 text-5xl py-6"
   >
-    <VueSpinner class="-mt-30" />
+    <VueSpinner class="-mt-70" />
   </div>
 
   <section v-else-if="state.job" class="bg-green-50">
