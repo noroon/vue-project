@@ -49,7 +49,7 @@ onMounted(async () => {
       <div v-if="state.loading" class="flex justify-center text-green-500 text-5xl py-6">
         <VueSpinner />
       </div>
-      <div v-else-if="state.jobs" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div v-else-if="!!state.jobs.length" class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <JobCard v-for="job in visibleJobs" :key="job.id" :job="job" />
       </div>
       <div v-else>{{ state.error }}</div>

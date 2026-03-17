@@ -9,11 +9,13 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "server": "json-server --watch src/jobs.json --port 8000",
+    "netlify": "netlify dev",
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix --cache --ignore-pattern 'node_modules/*' --ignore-pattern 'dist/*' --ignore-pattern '.yarn/*'",
     "format": "prettier --write --experimental-cli src/"
   },
   "dependencies": {
+    "@netlify/functions": "^5.1.5",
     "@tailwindcss/vite": "^4.1.18",
     "axios": "^1.13.6",
     "json-server": "^1.0.0-beta.12",
@@ -34,6 +36,7 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-vue": "~10.7.0",
     "jiti": "^2.6.1",
+    "netlify-cli": "^24.1.0",
     "npm-run-all2": "^8.0.4",
     "prettier": "3.8.1",
     "typescript": "~5.9.3",
@@ -41,8 +44,5 @@
     "vite-plugin-vue-devtools": "^8.0.5",
     "vue-eslint-parser": "^10.2.0",
     "vue-tsc": "^3.2.2"
-  },
-  "engines": {
-    "node": "^20.19.0 || >=22.12.0"
   }
 }
