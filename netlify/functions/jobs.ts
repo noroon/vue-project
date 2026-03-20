@@ -58,7 +58,7 @@ export const handler: Handler = async (event) => {
       const body = JSON.parse(event.body || '{}')
 
       const newJob = {
-        id: ++jobs.length,
+        id: Date.now(),
         ...body,
       }
 
