@@ -1,6 +1,8 @@
 import type { Handler } from '@netlify/functions'
 import jobsData from './jobs.json'
+// œtodo - try to import type and json from the original source
 // import type { Job } from '../../src/types/job'
+
 type Job = {
   id: string
   title: string
@@ -31,15 +33,18 @@ const res = (statusCode: number, data: resData) => ({
 
 export const handler: Handler = async (event) => {
   try {
+    const method = event.httpMethod
+    const path = event.path
+
     // GET /api/jobs
-    if (event.path.endsWith('/jobs')) {
+    if (method === 'GET' && path.endsWith('/jobs')) {
       return res(200, jobs)
     }
 
     // GET /api/jobs/:id
-    const reqId = event.path.match(/jobs\/(\d+)/)?.[1]
+    const reqId = path.match(/jobs\/(\d+)/)?.[1]
 
-    if (reqId) {
+    if (method === 'GET' && reqId) {
       const job = jobs.find((job) => job.id === reqId)
 
       if (!job) {
@@ -48,8 +53,20 @@ export const handler: Handler = async (event) => {
 
       return res(200, job)
     }
+    // POST /api/jobs
+    if (method === 'POST' && path.endsWith('/jobs')) {
+      const body = JSON.parse(event.body || '{}')
 
-    return res(404, { message: 'Not found' }) // redirect to 404
+      const newJob = {
+        id: jobs.length,
+        ...body,
+      }
+
+      jobs.push(newJob)
+
+      return res(201, newJob)
+    }
+    return res(404, { message: 'Not found' }) // @todo - redirect to 404
   } catch (error) {
     console.error(error)
 
