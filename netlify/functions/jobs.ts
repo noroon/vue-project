@@ -21,7 +21,7 @@ type Job = {
 type ErrorMessage = { message: string }
 type resData = Job | Job[] | ErrorMessage
 
-const jobs: Job[] = jobsData.jobs
+let jobs: Job[] = jobsData.jobs
 
 const res = (statusCode: number, data: resData) => ({
   statusCode,
@@ -34,8 +34,7 @@ const res = (statusCode: number, data: resData) => ({
 export const handler: Handler = async (event) => {
   try {
     const method = event.httpMethod
-    const path = event.path
-    // const { httpMethod, path } = event
+    const { path } = event
 
     // GET /api/jobs
     if (method === 'GET' && path.endsWith('/jobs')) {
@@ -47,13 +46,9 @@ export const handler: Handler = async (event) => {
 
     if (method === 'GET' && reqId) {
       const job = jobs.find((job) => job.id === reqId)
-
-      if (!job) {
-        return res(404, { message: 'Job not found' })
-      }
-
-      return res(200, job)
+      return job ? res(200, job) : res(404, { message: 'Job not found' })
     }
+
     // POST /api/jobs
     if (method === 'POST' && path.endsWith('/jobs')) {
       const body = JSON.parse(event.body || '{}')
@@ -67,6 +62,17 @@ export const handler: Handler = async (event) => {
 
       return res(201, newJob)
     }
+
+    // DELETE /api/jobs/:id
+    if (method === 'DELETE' && reqId) {
+      const jobIndex = jobs.findIndex((job) => job.id === reqId)
+      const deletedJob = jobs[jobIndex]
+
+      jobs = jobs.filter((job) => job.id !== reqId)
+
+      return deletedJob ? res(200, deletedJob) : res(404, { message: 'Job not found' })
+    }
+
     return res(404, { message: 'Not found' }) // @todo - redirect to 404
   } catch (error) {
     console.error(error)
