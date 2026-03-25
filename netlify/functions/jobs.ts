@@ -63,6 +63,24 @@ export const handler: Handler = async (event) => {
       return res(201, newJob)
     }
 
+    // PUT /api/jobs/:id
+    if (method === 'PUT' && reqId) {
+      const body = JSON.parse(event.body || '{}')
+
+      const jobIndex = jobs.findIndex((job) => job.id === reqId)
+
+      if (jobIndex === -1) {
+        return res(404, { message: 'Job not found' })
+      }
+
+      jobs[jobIndex] = {
+        ...jobs[jobIndex],
+        ...body,
+      }
+
+      return res(200, jobs[jobIndex]!)
+    }
+
     // DELETE /api/jobs/:id
     if (method === 'DELETE' && reqId) {
       const jobIndex = jobs.findIndex((job) => job.id === reqId)
