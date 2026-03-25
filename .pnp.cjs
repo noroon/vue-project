@@ -54,6 +54,7 @@ const RAW_RUNTIME_STATE =
           ["vue-eslint-parser", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:10.4.0"],\
           ["vue-project", "workspace:."],\
           ["vue-router", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:5.0.3"],\
+          ["vue-toastification", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:2.0.0-rc.5"],\
           ["vue-tsc", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:3.2.5"],\
           ["vue3-spinners", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:1.3.3"]\
         ],\
@@ -15942,6 +15943,7 @@ const RAW_RUNTIME_STATE =
           ["vue-eslint-parser", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:10.4.0"],\
           ["vue-project", "workspace:."],\
           ["vue-router", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:5.0.3"],\
+          ["vue-toastification", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:2.0.0-rc.5"],\
           ["vue-tsc", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:3.2.5"],\
           ["vue3-spinners", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:1.3.3"]\
         ],\
@@ -15994,6 +15996,28 @@ const RAW_RUNTIME_STATE =
           "@types/vue__compiler-sfc",\
           "@vue/compiler-sfc",\
           "pinia",\
+          "vue"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["vue-toastification", [\
+      ["npm:2.0.0-rc.5", {\
+        "packageLocation": "../../.yarn/berry/cache/vue-toastification-npm-2.0.0-rc.5-cd5775e651-10c0.zip/node_modules/vue-toastification/",\
+        "packageDependencies": [\
+          ["vue-toastification", "npm:2.0.0-rc.5"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:2.0.0-rc.5", {\
+        "packageLocation": "./.yarn/__virtual__/vue-toastification-virtual-d191ef1853/3/.yarn/berry/cache/vue-toastification-npm-2.0.0-rc.5-cd5775e651-10c0.zip/node_modules/vue-toastification/",\
+        "packageDependencies": [\
+          ["@types/vue", null],\
+          ["vue", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:3.5.30"],\
+          ["vue-toastification", "virtual:7280f5c4b5cbaa1ba4a9e5447f3f1c1588df2a8e3b2e6d787f1f5221e116573dfd1c97295ce5c8eaf19ea33027202e2484cfbab1f218187af35fcac491efc009#npm:2.0.0-rc.5"]\
+        ],\
+        "packagePeers": [\
+          "@types/vue",\
           "vue"\
         ],\
         "linkType": "HARD"\
