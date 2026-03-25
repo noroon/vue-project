@@ -35,6 +35,7 @@ export const handler: Handler = async (event) => {
   try {
     const method = event.httpMethod
     const path = event.path
+    // const { httpMethod, path } = event
 
     // GET /api/jobs
     if (method === 'GET' && path.endsWith('/jobs')) {
