@@ -1,22 +1,22 @@
 <script setup lang="ts">
-import { reactive, onMounted } from 'vue'
-import { useRoute, RouterLink, useRouter } from 'vue-router'
-import axios from 'axios'
-import { VueSpinner } from 'vue3-spinners'
+import { onMounted, reactive } from 'vue'
+import { RouterLink, useRoute, useRouter } from 'vue-router'
 import { useToast } from 'vue-toastification'
-import type { Job } from '@/types/job'
+import { VueSpinner } from 'vue3-spinners'
+import axios from 'axios'
 import BackButton from '@/components/BackButton.vue'
-
-const route = useRoute()
-const router = useRouter()
-const toast = useToast()
-const jobId = route.params.id
+import type { Job } from '@/types/job'
 
 interface State {
   job: Job | null
   loading: boolean
   error: string | null
 }
+
+const route = useRoute()
+const router = useRouter()
+const toast = useToast()
+const jobId = route.params.id
 
 const state = reactive<State>({
   job: null,
