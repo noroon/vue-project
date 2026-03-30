@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
-import axios from 'axios'
 import { useToast } from 'vue-toastification'
+import axios from 'axios'
 import router from '@/router'
 import type { Job } from '@/types/job'
 
