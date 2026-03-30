@@ -1,48 +1,97 @@
-# vue-project
+# Vue Jobs Board (Vite + Vue 3 + Netlify Functions)
 
-This template should help get you started developing with Vue 3 in Vite.
+A small job board application built with **Vue 3**, **TypeScript**, **Vite**, and **Tailwind CSS**.
 
-## Recommended IDE Setup
+This is a learning project to get more familiar with Vue, based on this Traversy Media course:  
+https://www.youtube.com/watch?v=VeNfHj6MhgA
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+🔗 **Live Demo:** https://noroon-vue.netlify.app/
 
-## Recommended Browser Setup
+---
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## 🔄 CI/CD (GitHub Actions + Netlify)
 
-## Type Support for `.vue` Imports in TS
+This project uses **GitHub Actions** for continuous integration and Netlify for production deployment.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
 
-## Customize configuration
+### Workflow
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+The GitHub Actions workflow runs automatically on push / pull request:
 
-## Project Setup
+- installs dependencies
+- runs TypeScript type-checking
+- runs ESLint
+- builds the project
 
-```sh
+After a successful build, Netlify automatically deploys the latest version of the app.
+
+The workflow configuration can be found here:
+
+`.github/workflows/dev-ci.yml`
+
+---
+
+## 🚀 Features
+
+- Browse job listings
+- View job details
+- Create / update / delete jobs
+- Loading states and error handling
+- Toast notifications
+- Responsive UI with Tailwind CSS
+- Works locally with `json-server`
+- Works in production using Netlify Functions (serverless API)
+
+---
+
+## 🛠 Tech Stack
+
+- **Vue 3** + **TypeScript**
+- **Vite**
+- **Vue Router**
+- **Tailwind CSS**
+- **Axios**
+- **json-server** (local REST API)
+- **Netlify Functions** (production serverless API)
+- **Vue Toastification**
+- **Vue3 Spinners**
+- **ESLint + Prettier**
+
+---
+
+## 📦 Installation
+
+Clone the repository and install dependencies:
+
+```bash
+nvm use
 yarn
 ```
 
-### Compile and Hot-Reload for Development
+## 🔥 Local Development
 
-```sh
+Start the local API using json-server:
+
+```bash
+yarn server
+```
+
+Start the Vite dev server:
+
+```bash
 yarn dev
 ```
 
-### Type-Check, Compile and Minify for Production
+The app will be available at: http://localhost:3000
+The json-server API runs on: http://localhost:8000
 
-```sh
-yarn build
+
+## 🌍 Netlify Functions (Local Testing)
+
+To run the project with Netlify Functions locally:
+
+```bash
+yarn netlify
 ```
 
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-yarn lint
-```
+This starts Netlify Dev, including redirects and serverless functions, so you can test production-like API behavior locally.
