@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { reactive, computed, onMounted } from 'vue'
+import { computed, onMounted, reactive } from 'vue'
 import { RouterLink } from 'vue-router'
-import axios from 'axios'
 import { VueSpinner } from 'vue3-spinners'
-import JobCard from './JobCard.vue'
+import axios from 'axios'
 import type { Job } from '@/types/job'
+import JobCard from './JobCard.vue'
 
 interface Props {
   limit?: number
